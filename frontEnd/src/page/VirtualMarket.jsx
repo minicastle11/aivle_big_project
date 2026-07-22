@@ -651,19 +651,19 @@ function VirtualMarket() {
           <button
             type="button"
             onClick={() =>
-              navigate('/business-analysis')
+              navigate('/project-create')
             }
           >
-            사업성 분석
+            기획서 등록
           </button>
 
           <button
             type="button"
             onClick={() =>
-              navigate('/project-create')
+              navigate('/business-analysis')
             }
           >
-            기획서 등록
+            사업성 분석
           </button>
 
           <button

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import {Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 import Head from './Head';
 import './App.css';
 import ContactPage from './page/ContactPage.jsx';
@@ -8,9 +8,16 @@ import Login from "./page/Login.jsx";
 import SignupPage from "./page/SignupPage.jsx";
 import Admin from './page/Admin.jsx';
 import VirtualMarket from './page/VirtualMarket.jsx';
+import ProjectCreatePage from "./page/ProjectCreatePage.jsx";
+import LegalCheckPage from "./page/LegalCheckPage.jsx";
 
 // 메인 홈 화면 컴포넌트
 function Home() {
+    const navigate = useNavigate();
+
+    const handleStartProject = () => {
+        navigate('/project-create');
+    };
     return (
         <main className="main-content">
             <div className="hero-card">
@@ -21,6 +28,15 @@ function Home() {
                     출시 전 아이디어를 가상 고객 수백 명에게 미리 테스트하세요.<br/>
                     수백만 원짜리 시장조사가 몇 분 만에 — 컨셉·가격·기능까지.
                 </p>
+                <div className="hero-actions">
+                    <button
+                        type="button"
+                        className="hero-start-button"
+                        onClick={handleStartProject}
+                    >
+                        기획서 등록하고 시작하기
+                    </button>
+                </div>
             </div>
         </main>
     );
@@ -49,6 +65,8 @@ function App() {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/admin" element={<Admin />} />
                 <Route path="/virtual-market" element={<VirtualMarket />} />
+                <Route path="/project-create" element={<ProjectCreatePage />} />
+                <Route path="/legal-check" element={<LegalCheckPage />} />
             </Routes>
         </div>
     );

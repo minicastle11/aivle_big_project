@@ -2,9 +2,10 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Head from './Head';
 import './App.css';
-import Contact from './page/Contact.jsx';
-import Service from './page/Service.jsx';
+import ContactPage from './page/ContactPage.jsx';
+import ServicePage from './page/ServicePage.jsx';
 import Login from "./page/Login.jsx";
+import SignupPage from "./page/SignupPage.jsx";
 
 // 메인 홈 화면 컴포넌트
 function Home() {
@@ -38,8 +39,9 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/service" element={<Service />} />
-                <Route path="/contact" element={<Contact />} />
+                <Route path="/signup" element={<SignupPage />} />
+                <Route path="/service" element={<ServicePage />} />
+                <Route path="/contact" element={<ContactPage />} />
             </Routes>
         </div>
     );

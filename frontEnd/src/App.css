@@ -339,3 +339,30 @@ body {
   align-items: center;
   gap: 6px;
 }
+/* -----------------------------------
+   히어로 카드 내부 시작 버튼 스타일
+----------------------------------- */
+.hero-actions {
+  margin-top: 28px;
+}
+
+.hero-start-button {
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #173b2f;
+  background-color: #6cc2a5;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.hero-start-button:hover {
+  background-color: #58b596;
+  transform: translateY(-2px);
+}
+
+.hero-start-button:active {
+  transform: translateY(0);
+}

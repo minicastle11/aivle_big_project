@@ -7,17 +7,20 @@ function ProjectCreate() {
     const navigate = useNavigate();
     const fileInputRef = useRef(null);
     const [selectedFile, setSelectedFile] = useState(null);
+    const [isSavedToDb, setIsSavedToDb] = useState(false);
 
     // 파일 업로드 버튼 클릭 시 숨겨진 input[type="file"] 실행
     const handleUploadClick = () => {
         fileInputRef.current?.click();
     };
 
-    // 파일 선택 처리
+    // 파일 선택 처리 (선택 시 DB 저장 완료 상태로 가상 전환)
     const handleFileChange = (e) => {
         const file = e.target.files?.[0];
         if (file) {
             setSelectedFile(file);
+            // DB 저장 완료 메시지 표시 (추후 백엔드 API 성공 응답 시 호출하도록 연동)
+            setIsSavedToDb(true);
         }
     };
 
@@ -26,15 +29,15 @@ function ProjectCreate() {
         navigate('/');
     };
 
-    // 다음 버튼 클릭 처리
+    // 다음 버튼 클릭 처리 -> 법률/규제 검토 단계로 이동
     const handleNext = () => {
         if (!selectedFile) {
             alert('사업기획서 파일을 먼저 업로드해 주세요.');
             return;
         }
-        // 다음 단계(데이터 확인 페이지)로 데이터 전달하며 이동
-        alert(`'${selectedFile.name}' 파일 검증 단계로 이동합니다.`);
-        // navigate('/project-check', { state: { file: selectedFile } });
+
+        // 법률/규제 검토 단계로 이동 (선택된 파일 정보 전달)
+        navigate('/legal-check', { state: { fileName: selectedFile.name } });
     };
 
     // 가이드라인 워드 파일 다운로드

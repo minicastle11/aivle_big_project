@@ -20,6 +20,7 @@ function Head() {
             {/* 로그인 아이콘 버튼 (클릭 시 /login 페이지로 이동) */}
             <div className="user-section">
                 <Link to="/login" className="login-button" aria-label="로그인">
+                    로그인
                     <svg
                         width="24"
                         height="24"

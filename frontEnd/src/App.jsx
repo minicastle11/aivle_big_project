@@ -10,7 +10,7 @@ import Admin from './page/Admin.jsx';
 import VirtualMarket from './page/VirtualMarket.jsx';
 import ProjectCreatePage from "./page/ProjectCreatePage.jsx";
 import LegalCheckPage from "./page/LegalCheckPage.jsx";
-
+import BusinessAnalysisPage from "./page/BusinessAnalysisPage.jsx";
 // 메인 홈 화면 컴포넌트
 function Home() {
     const navigate = useNavigate();
@@ -67,6 +67,7 @@ function App() {
                 <Route path="/virtual-market" element={<VirtualMarket />} />
                 <Route path="/project-create" element={<ProjectCreatePage />} />
                 <Route path="/legal-check" element={<LegalCheckPage />} />
+                <Route path="/business-analysis" element={<BusinessAnalysisPage />} />
             </Routes>
         </div>
     );
